@@ -2,6 +2,7 @@
 import web
 import markdown
 
+
 def humanize_bytes(bytes):
     bytes = float(bytes)
     if bytes >= 1073741824:
@@ -16,6 +17,7 @@ def humanize_bytes(bytes):
     else:
         size = '%dB' % bytes
     return size
+
 
 def make_html(c):
     return markdown.markdown(c)
