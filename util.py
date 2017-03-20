@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-import web
+from os.path import expanduser
+import os
 import markdown
 
 
@@ -17,6 +18,13 @@ def humanize_bytes(bytes):
     else:
         size = '%dB' % bytes
     return size
+
+
+def check_conf_dir(name):
+    savedir = expanduser("~/{}".format(name))
+    if not os.path.exists(savedir):
+        os.mkdir(savedir)
+    return savedir
 
 
 def make_html(c):

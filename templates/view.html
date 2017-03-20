@@ -2,14 +2,14 @@ $def with (page, user, t, f)
 <div id="content">
 <div id="paragraph">
 <h1 class="title">$page.title</h1>
-<p class="date">提交者：$user.username 于 $page.created</p>
+<p class="date">Пользователь：$user.username Дата $page.created</p>
 $:make_html(page.content)
 $if t:
 	<br/>
-	<p>所有跟帖</p>
+	<p>Все темы</p>
 	$:t
 <br/>
-<p>回帖</p>
+<p>Ответы</p>
 <form method="POST">
 	$:f.render()
 </form>
