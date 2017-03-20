@@ -1,7 +1,11 @@
-安装web.py
-easy_install web.py
+### Description
 
-解压并拷贝 web 文件夹到你的应用程序目录下
-python code.py
+This is small forum writen on web.py framework and use sqlite. Very simple. 
 
-打开你的浏览器输入 http://localhost:8080/
+### Install libs
+
+pip install -r requirements.txt
+
+### Start server
+
+http://0.0.0.0:8080/
