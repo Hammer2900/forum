@@ -4,8 +4,9 @@ import datetime
 import util
 import hashlib
 from os.path import join
+from settings import DB_FILENAME
 
-db = web.database(dbn='sqlite', db=join("data", "forum.db3"))
+db = web.database(dbn='sqlite', db=DB_FILENAME)
 
 
 def count_comment(parent):

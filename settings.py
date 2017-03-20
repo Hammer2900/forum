@@ -2,11 +2,12 @@
 from util import check_conf_dir
 
 
-SITE_NAME = "Форум ирпень 14"
+SITE_NAME = "Форум"
 TAG_LINE = ""
 FOOTER_TAG = "2017 год"
 SETTINGS_FOLDER = ".small_forum"
 SETTINGS_PATH = check_conf_dir(SETTINGS_FOLDER)
+DB_FILENAME = "{}/{}".format(SETTINGS_PATH, "forum.db3")
 
 RECIP = 'finalka@gmail.com'
 
