@@ -71,6 +71,7 @@ def view_post(page_id):
 def new_post(username, password, title, content):
     user_id = register_or_login(username, password)
     if user_id:
+        util.send_telegram(content)
         return db.insert('posts', title=title, content=content, user_id=user_id, created=datetime.datetime.utcnow(),
                          parent=0)
 
@@ -78,6 +79,7 @@ def new_post(username, password, title, content):
 def new_comment(username, password, title, content, parent):
     user_id = register_or_login(username, password)
     if user_id:
+        util.send_telegram(content)
         return db.insert('posts', title=title, content=content, user_id=user_id, created=datetime.datetime.utcnow(),
                          parent=parent)
     else:

@@ -2,7 +2,7 @@
 from util import check_conf_dir
 
 
-SITE_NAME = "Форум"
+SITE_NAME = "Анонимный Форум"
 TAG_LINE = ""
 FOOTER_TAG = "2017 год"
 SETTINGS_FOLDER = ".small_forum"

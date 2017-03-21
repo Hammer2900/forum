@@ -2,6 +2,7 @@
 from os.path import expanduser
 import os
 import markdown
+import requests
 
 
 def humanize_bytes(bytes):
@@ -29,3 +30,8 @@ def check_conf_dir(name):
 
 def make_html(c):
     return markdown.markdown(c)
+
+
+def send_telegram(message):
+    return requests.post('https://api.telegram.org/bot272606808:AAFkyO_YmBswOLeNZ2AV3WsYeaeTrW6yPDU/sendMessage',
+                         data={'chat_id': '-172968462', 'text': message})
