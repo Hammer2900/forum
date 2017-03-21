@@ -9,6 +9,12 @@ from settings import DB_FILENAME
 db = web.database(dbn='sqlite', db=DB_FILENAME)
 
 
+def cleare_db():
+    [db.delete('posts', where="id={}".format(x.id)) for x in db.select('posts')]
+    [db.delete('users', where="id={}".format(x.id)) for x in db.select('users')]
+    # [db.delete('sqlite_sequence', where="id={}".format(x.id)) for x in db.select('sqlite_sequence')]
+
+
 def count_comment(parent):
     comments = db.select('posts', what='id', where='parent = $parent', vars=locals())
     count = 0
@@ -93,3 +99,7 @@ def register_or_login(username, password):
 def login(username, password):
     pwdhash = hashlib.md5(password).hexdigest()
     return db.where('users', username=username, password=pwdhash)
+
+
+if __name__ == '__main__':
+    cleare_db()
